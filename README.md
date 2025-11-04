@@ -32,12 +32,6 @@ Example:
 python correlation_analysis.py Final_Fa_Vals_Complete.xlsx my_analysis
 ```
 
-## What the Script Does
-
-The script automatically analyzes all 15 measurements:
-- C5, C6, C7, C8, T1 Whole Cord
-- C5, C6, C7, C8, T1 Right Hemicord  
-- C5, C6, C7, C8, T1 Left Hemicord
 
 For each measurement, it:
 1. **Extracts valid data** (excludes 'x' values and patients 12, 14)
@@ -97,22 +91,6 @@ For each measurement, it:
 - **Points outside 95% limits**: Potential outliers
 - **Systematic bias**: Mean difference far from zero
 
-## Example Results from Your Data
-
-### C7 Measurements (Best Performance)
-- **C7 Whole Cord**: r = 0.87*** (very strong, highly significant)
-- **C7 Right Hemicord**: r = 0.82*** (very strong)
-- **C7 Left Hemicord**: r = 0.81*** (very strong)
-
-### C5 Measurements (Good Performance)
-- **C5 Whole Cord**: r = 0.78** (strong, very significant)
-- **C5 Left Hemicord**: r = 0.64* (strong, significant)
-- **C5 Right Hemicord**: r = 0.61* (strong, significant)
-
-### T1 Measurements (Weaker Performance)
-- **T1 measurements**: r = 0.18-0.42, ns (not significant)
-- Smaller sample size (n=8) and more variability
-
 ## Clinical Interpretation
 
 **Strong correlations (r ≥ 0.60)**: The two measurement methods show good agreement and either can be used reliably.
@@ -138,9 +116,6 @@ For each measurement, it:
 - Check that row 0 contains headers
 - Ensure data starts at row 1 (after header)
 
-## Modifying the Script
-
-The script is designed to be flexible. Key sections:
 
 **Line 143-158**: Define which measurements to analyze
 ```python
@@ -154,15 +129,6 @@ measurements = [
 
 **create_scatter_plot()** and **create_bland_altman_plot()**: Customize visualizations
 
-## Questions?
-
-The script includes detailed comments and is designed to be readable. Feel free to:
-- Modify plot styles (colors, sizes, fonts)
-- Change statistical thresholds
-- Add additional measurements
-- Export to different formats
-
-## Citation
 
 If using this analysis in publications, consider citing:
 - Pearson, K. (1895). Note on regression and inheritance in the case of two parents. Proceedings of the Royal Society of London.
